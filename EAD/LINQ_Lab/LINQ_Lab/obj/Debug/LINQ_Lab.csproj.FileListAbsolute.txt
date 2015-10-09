@@ -1,0 +1,6 @@
+c:\users\matthew\documents\visual studio 2015\Projects\LINQ_Lab\LINQ_Lab\bin\Debug\LINQ_Lab.exe.config
+c:\users\matthew\documents\visual studio 2015\Projects\LINQ_Lab\LINQ_Lab\bin\Debug\LINQ_Lab.exe
+c:\users\matthew\documents\visual studio 2015\Projects\LINQ_Lab\LINQ_Lab\bin\Debug\LINQ_Lab.pdb
+c:\users\matthew\documents\visual studio 2015\Projects\LINQ_Lab\LINQ_Lab\obj\Debug\LINQ_Lab.exe
+c:\users\matthew\documents\visual studio 2015\Projects\LINQ_Lab\LINQ_Lab\obj\Debug\LINQ_Lab.pdb
+c:\users\matthew\documents\visual studio 2015\Projects\LINQ_Lab\LINQ_Lab\obj\Debug\LINQ_Lab.csprojResolveAssemblyReference.cache
