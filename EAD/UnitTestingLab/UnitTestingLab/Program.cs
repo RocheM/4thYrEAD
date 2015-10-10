@@ -20,11 +20,11 @@ namespace UnitTestingLab
 
 
             public string SortCode => sortCode;
-            public string AccountNumber => accountNumber;j
+            public string AccountNumber => accountNumber;
             public double OverdraftLimit => overdraftLimit;
             public double Balance => balance;
 
-            public List<double> TransactionHistory { get }
+            public List<double> TransactionHistory { get; }
 
 
             public BankAccount(string sortCode, string accountNumber, double overdraftLimit)
