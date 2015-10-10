@@ -72,6 +72,7 @@ namespace UnitTestingLab
 
         static void Main()
         {
+            BankAccount b = new BankAccount("Hello", "Test", 100.50);
         }
     }
 }
