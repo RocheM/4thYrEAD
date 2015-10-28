@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace UnitTestingLab
 {
-    class BankAccount
+    public class BankAccount
     {
 
         private string sortCode;
@@ -13,20 +16,27 @@ namespace UnitTestingLab
         private List<double> transactionHistory;
 
 
-        public string SortCode => sortCode;
-        public string AccountNumber => accountNumber;
-        public double OverdraftLimit => overdraftLimit;
-        public double Balance => balance;
+        public string SortCode { get { return sortCode; } }
 
-        public List<double> TransactionHistory { get; }
+        public string AccountNumber { get { return accountNumber; } }
 
+        public double OverdraftLimit { get { return overdraftLimit; } }
+        public double Balance { get { return balance; } }
+        public List<double> TransactionHistory { get { return transactionHistory; } }
 
         public BankAccount(string sortCode, string accountNumber, double overdraftLimit)
         {
-            balance = 0;
-            this.sortCode = sortCode;
-            this.accountNumber = accountNumber;
-            this.overdraftLimit = overdraftLimit;
+            if (overdraftLimit > 0)
+            {
+
+                balance = 0;
+                this.sortCode = sortCode;
+                this.accountNumber = accountNumber;
+                this.overdraftLimit = overdraftLimit;
+                transactionHistory = new List<double>();
+            }
+            else
+                throw new ArgumentException("Invalid Overdraft limit");
         }
 
         public BankAccount(string sortCode, string accountNumber)
@@ -35,6 +45,8 @@ namespace UnitTestingLab
             overdraftLimit = 0;
             this.accountNumber = accountNumber;
             this.sortCode = sortCode;
+            transactionHistory = new List<double>();
+
         }
 
 
@@ -43,10 +55,11 @@ namespace UnitTestingLab
             if (amount > 0)
             {
                 balance += amount;
+                transactionHistory.Add(amount);
                 return Balance;
             }
             else
-                throw new Exception(amount + " is an invalid amount to deposit");
+                throw new ArgumentException("Invalid amount to deposit");
         }
 
         public double Withdraw(double amount)
@@ -54,17 +67,25 @@ namespace UnitTestingLab
             if (amount < balance && amount > 0)
             {
                 balance -= amount;
-
+                transactionHistory.Add(amount * -1);
                 return Balance;
             }
             else
-                throw new Exception(amount + "is an invalid amount to withdraw");
-
+                throw new ArgumentException("Invalid amount to withdraw");
         }
 
         public override string ToString()
         {
-            return "Sort Code:\t" + SortCode + "\nAccount Number\t" + accountNumber + "\nBalance:\t" + balance;
+            string toReturn = "Account Number:\t" + accountNumber + "\nSort Code:\t" + sortCode + "\nOverdraft Limit:\t" + overdraftLimit + "\nBalance\t" + balance + "\n============Transaction History============\n";
+            int counter = 1;
+            foreach (var item in transactionHistory)
+            {
+                toReturn += "\nEntry #" + counter + ":\t" + item;
+                ++counter;
+            }
+
+
+            return toReturn;
         }
     }
 }
