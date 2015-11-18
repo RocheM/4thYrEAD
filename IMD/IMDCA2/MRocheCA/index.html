@@ -17,6 +17,7 @@
 
 </head>
 
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
@@ -30,6 +31,8 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Matthew Roche</a>
             </div>
+
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
@@ -38,19 +41,25 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#skills">Skills</a>
+                        <a class="page-scroll" href="#skills"><p><i class="fa fa-code fa-fw fa-lg"></i>Skills</p></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#education">Education</a>
+                        <a class="page-scroll" href="#education"><p><i class="fa fa-graduation-cap fa-fw fa-lg"></i> Education</p></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#projects">Projects</a>
+                        <a class="page-scroll" href="#projects"><p><i class="fa fa-pencil fa-fw fa-lg"></i>Projects</p></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                         <a data-toggle="modal" data-target="#contactModal"><p style="font-weight:800; margin:auto"><i class="fa fa-paper-plane-o fa-fw fa-lg"></i>Contact Me</p></a>
                     </li>
                 </ul>
             </div>
+
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -68,7 +77,8 @@
                         </div>
                     <div class="col-lg-6" style="word-wrap: break-word;">
                         <h1>Matthew Roche</h1>
-                        <p>Soon to be graduate of the IT Tallaght Honours Computing programme – Hardworking, motivated and dedicating to starting a career in problem solving with technology. Have experience working with a range of Technologies. Seeking an entry-level position or internship role with aspirations to progress within an organization to become a software developer.</p>
+                        <p>Soon to be graduate of the IT Tallaght Honours Computing programme – Hardworking, motivated and dedicating to starting a career in problem solving with technology.</p>
+                        <p>Have experience working with a range of Technologies. Seeking an entry-level position or internship role with aspirations to progress within an organization to become a software developer.</p>
                     </div>
                 </div>
             </div>
@@ -89,6 +99,8 @@
 
 
     <section id="projects" class="projects-section">
+
+
         <div class="container" style="margin-top:10px">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -99,22 +111,24 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img class="first-slide" src="http://lorempixel.com/1000/500/" alt="Second Year Project">
+                        <img class="first-slide " src="images/Year2Proj.png" alt="Second Year Project">
                         <div class="container">
                             <div class="carousel-caption">
                                 <h1>Second Year Project.</h1>
-                                <p>This will contain a description of my second year project</p>
-                                <p><a class="btn btn-lg btn-primary" href="*" role="button">Learn More</a></p>
+                                <p>For the Second Year Project we developed an Employee Management System</p>
+                                <p><a class="btn btn-lg btn-primary" href="*" role="button" data-toggle="modal" data-target="#firstYearModal">Learn More</a></p>
                             </div>
                         </div>
                     </div>
+
+
                     <div class="item">
                         <img class="second-slide" src="http://lorempixel.com/1000/500/" alt="Second slide">
                         <div class="container">
                             <div class="carousel-caption">
                                 <h1>Third Year Project</h1>
-                                <p>This will contain a description of my second year project</p>
-                                <p><a class="btn btn-lg btn-primary" href="*" role="button">Learn more</a></p>
+                                <p>For the Third Year Project we worked on a Contact App for Windows Phone 8.1</p>
+                                <p><a class="btn btn-lg btn-primary" href="*" role="button" data-toggle="modal" data-target="#secondYearModal">Learn More</a></p>
                             </div>
                         </div>
                     </div>
@@ -140,41 +154,89 @@
             </div><!-- /.carousel -->
 
         </div>
+
+
     </section>
 
 
-    <section id="contact" class="contact-section">
 
-        <h1>Contact Me</h1>
-        <div class="container">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="inputEmail" class="control-label col-xs-2">Email</label>
-                    <div class="col-xs-10">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword" class="control-label col-xs-2">Subject</label>
-                    <div class="col-xs-10">
-                        <input type="password" class="form-control" id="inputSubject" placeholder="Subject">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword" class="control-label col-xs-2">Subject</label>
-                    <div class="col-xs-10">
-                        <textarea name="inputMessage" class="form-control" tabindex="6"
-                                  placeholder="Write a Message" required></textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-offset-2 col-xs-10">
-                        <button type="submit" class="btn btn-primary">Send</button>
-                    </div>
-                </div>
-            </form>
 
+    <div class="modal fade modal-fullscreen force-fullscreen" id="secondYearModal" tabindex="-1" role="dialog" aria-labelledby="firstYearModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Third Year Project</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Authors:</h3>
+                    <a class="btn btn-default faa-parent animated-hover" href="https://github.com/AdamMcGivern" role="button"><i class="fa fa-github-square fa-fw fa-2x faa-pulse"></i>Adam McGivern</a>
+                    <a class="btn btn-default faa-parent animated-hover" href="https://github.com/RocheM" role="button"><i class="fa fa-github-square fa-fw fa-2x faa-pulse"></i>Matthew Roche</a>
+                    <hr />
+                    <p>Developed a Contacts Application using the Windows Presentation Foundation on Windows Phone. This application allows users to create dynamic fields associated with Contacts, create and assign groups, schedule events and send SMS/Email messages to Contacts and Groups of Contacts. </p>
+
+                    <p>The project was developed using C# and XAML, using JSON as a persistence mechanism. The goal of this project was to help develop our abilities in Mobile Application Development, we wanted to gain a knowledge in C# and other Microsoft Technologies.                                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default faa-parent animated-hover" data-dismiss="modal"><i class="fa fa-times fa-fw fa-2x faa-pulse"></i>Close</button>
+                    <a href="https://github.com/AdamMcGivern/Contacto_ThirdYearProject" class="btn btn-default faa-parent animated-hover" role="button"><i class="fa fa-github-square fa-2x faa-pulse"></i>Explore Repository</a>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+
+    <div class="modal fade modal-fullscreen force-fullscreen" id="firstYearModal" tabindex="-1" role="dialog" aria-labelledby="firstYearModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">First Year Project</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Authors:</h3>
+                    <a class="btn btn-default faa-parent animated-hover" href="https://github.com/AdamMcGivern" role="button"><i class="fa fa-github-square fa-fw fa-2x faa-pulse"></i>Adam McGivern</a>
+                    <a class="btn btn-default faa-parent animated-hover" href="https://github.com/RocheM" role="button"><i class="fa fa-github-square fa-fw fa-2x faa-pulse"></i>Matthew Roche</a>
+                    <a class="btn btn-default faa-parent animated-hover" href="https://github.com/garicho" role="button"><i class="fa fa-github-square fa-fw fa-2x faa-pulse"></i>Gary McDonald</a>
+                    <hr />
+                    <p>Created an Employee Management System for the Year 2 project at IT Tallaght. Project was built using Java with an SQL relational database for storage purposes.</p>
+
+                    <p>The primary goal of this project was to practice and develop the concepts learned during the first two years of this course.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default faa-parent animated-hover" data-dismiss="modal"><i class="fa fa-times fa-fw fa-2x faa-pulse"></i>Close</button>
+                    <a href="https://www.dropbox.com/s/x7r1pdpiyqv6q6b/ProjectV18.zip?dl=0" class="btn btn-default faa-parent animated-hover" role="button"><i class="fa fa-download fa-fw fa-2x faa-pulse"></i>Download Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade modal-fullscreen force-fullscreen" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="firstYearModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Contact Me</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal col-sm-12">
+                        <div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
+                        <div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Your message here.." data-placement="top" data-trigger="manual"></textarea></div>
+                        <div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="email@you.com" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-success animated-hover" data-dismiss="modal"><i class="fa fa-paper-plane-o fa-fw fa-2x faa-pulse"></i>Send it!</button>
+                    <button type="button" class="btn btn-default pull-left faa-parent animated-hover" data-dismiss="modal"><i class="fa fa-times fa-fw fa-2x faa-pulse"></i>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
 </html>
