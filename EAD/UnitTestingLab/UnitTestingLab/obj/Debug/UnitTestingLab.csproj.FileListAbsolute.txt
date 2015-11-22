@@ -1,6 +1,0 @@
-C:\Users\Matthew\Desktop\EAD_Labs\EAD\UnitTestingLab\UnitTestingLab\bin\Debug\UnitTestingLab.exe.config
-C:\Users\Matthew\Desktop\EAD_Labs\EAD\UnitTestingLab\UnitTestingLab\bin\Debug\UnitTestingLab.exe
-C:\Users\Matthew\Desktop\EAD_Labs\EAD\UnitTestingLab\UnitTestingLab\bin\Debug\UnitTestingLab.pdb
-C:\Users\Matthew\Desktop\EAD_Labs\EAD\UnitTestingLab\UnitTestingLab\obj\Debug\UnitTestingLab.exe
-C:\Users\Matthew\Desktop\EAD_Labs\EAD\UnitTestingLab\UnitTestingLab\obj\Debug\UnitTestingLab.pdb
-C:\Users\Matthew\Desktop\EAD_Labs\EAD\UnitTestingLab\UnitTestingLab\obj\Debug\UnitTestingLab.csprojResolveAssemblyReference.cache

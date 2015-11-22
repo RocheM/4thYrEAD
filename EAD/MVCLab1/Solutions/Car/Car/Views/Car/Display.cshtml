@@ -1,0 +1,15 @@
+﻿@model Car.Models.Car
+
+@{
+    ViewBag.Title = "Car Details";
+}
+
+
+<fieldset>
+    <legend>@ViewBag.Title</legend>
+    <div class="display-label">Make: @Html.DisplayFor(model => model.Make)</div>
+    <div class="display-label">Model:  @Html.DisplayFor(model => model.Model)</div>
+    <div class="display-label">Engine Size:  @Html.DisplayFor(model => model.EngineSize)</div>
+    <div class="display-label">Engine Type:   @Html.DisplayFor(model => model.EngineType)</div>
+</fieldset>
+

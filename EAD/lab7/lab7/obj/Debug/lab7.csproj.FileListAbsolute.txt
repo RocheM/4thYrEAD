@@ -1,6 +1,0 @@
-c:\users\matthew\documents\visual studio 2015\Projects\lab7\lab7\bin\Debug\lab7.exe.config
-c:\users\matthew\documents\visual studio 2015\Projects\lab7\lab7\bin\Debug\lab7.exe
-c:\users\matthew\documents\visual studio 2015\Projects\lab7\lab7\bin\Debug\lab7.pdb
-c:\users\matthew\documents\visual studio 2015\Projects\lab7\lab7\obj\Debug\lab7.csprojResolveAssemblyReference.cache
-c:\users\matthew\documents\visual studio 2015\Projects\lab7\lab7\obj\Debug\lab7.exe
-c:\users\matthew\documents\visual studio 2015\Projects\lab7\lab7\obj\Debug\lab7.pdb

@@ -1,0 +1,35 @@
+﻿@model MVCLab1._3.Models.Text
+
+@{
+    ViewBag.Title = "Send";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Type in your SMS:</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.destination)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.destination)
+            @Html.ValidationMessageFor(model => model.destination)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.content)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.content)
+            @Html.ValidationMessageFor(model => model.content)
+        </div>
+
+        <p>
+            <input type="submit" value="Send" />
+        </p>
+    </fieldset>
+}
+
+

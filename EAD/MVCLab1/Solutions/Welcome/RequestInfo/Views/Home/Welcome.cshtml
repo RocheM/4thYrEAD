@@ -1,0 +1,13 @@
+﻿@using System;
+
+@{
+    ViewBag.Title = "Welcome";
+}
+
+@{
+    String zone = TimeZone.CurrentTimeZone.StandardName;   
+} 
+
+ <h2>@ViewBag.Message @zone</h2> 
+
+@* display current date and time on a view, and time zone *@

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace MVCLab1.Controllers
 {
     public class HomeController : Controller
@@ -23,6 +24,17 @@ namespace MVCLab1.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+       public ActionResult Car()
+        {
+
+            Models.Car c = new Models.Car();
+
+            c.Make = "Test";
+
 
             return View();
         }

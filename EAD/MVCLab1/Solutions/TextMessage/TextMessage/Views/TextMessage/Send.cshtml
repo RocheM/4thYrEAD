@@ -1,0 +1,39 @@
+﻿@model TextMessage.Models.SMSMessage
+
+@{
+    ViewBag.Title = "Send an SMS";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm() )
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Type in your SMS:</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ToMobileNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ToMobileNumber)
+            @Html.ValidationMessageFor(model => model.ToMobileNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Content)
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+
+        <p>
+            <input type="submit" value="Send" />
+        </p>
+    </fieldset>
+}
+

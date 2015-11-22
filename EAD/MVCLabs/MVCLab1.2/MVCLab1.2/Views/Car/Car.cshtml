@@ -1,0 +1,17 @@
+﻿@model MVCLab1._2.Models.Car
+
+@{
+    ViewBag.Title = "Car";
+}
+
+<h2>Car Details</h2>
+
+<div>
+    <div class="jumbotron">
+
+        <div class="display-label">Make: @Html.DisplayFor(model => model.make)</div>
+        <div class="display-label">Model: @Html.DisplayFor(model => model.model)</div>
+        <div class="display-label">Engine Type: @Html.DisplayFor(model => model.engineType)</div>
+        <div class="display-label">Engine Size: @Html.DisplayFor(model => model.enineSize)</div>
+    </div>
+</div>

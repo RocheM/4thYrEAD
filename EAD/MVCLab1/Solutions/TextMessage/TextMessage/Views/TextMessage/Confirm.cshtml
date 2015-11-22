@@ -1,0 +1,23 @@
+﻿@model TextMessage.Models.SMSMessage
+
+@{
+    ViewBag.Title = "Confirm";
+}
+
+<h2>SMS Succesfully sent:</h2>
+
+<fieldset>
+
+    <div class="display-label">To:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToMobileNumber)
+    </div>
+
+    <div class="display-label">Content:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Send another SMS", "Send")
+</p>
