@@ -8,6 +8,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
 {
+    public enum Occupation { Student=1, Intern, Junior, Senior}
+
     public class Person
     {
         [Required (ErrorMessage = "Requires a name")]
@@ -25,6 +27,11 @@ namespace WebApplication1.Models
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage ="Invalid Email")]
         [Display(Name = "Email")]
         public String Email { get; set; }
+
+        [Required(ErrorMessage ="Requires an occupation")]
+        [Display(Name ="Occupation")]
+        [Range(1, int.MaxValue, ErrorMessage ="Please Select an option")]
+        public Occupation role { get; set; }
 
     }
 }

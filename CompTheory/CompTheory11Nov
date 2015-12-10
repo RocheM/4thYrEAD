@@ -1,0 +1,53 @@
+Comp Theory - Turing Machines
+
+Consider non-regular language
+
+L = { 0^n 1^n | n >= 0}
+
+Cannot Accept:
+	-> 0101
+	-> 1100
+
+We are going to build a Turing machine to accept strings from L.
+
+
+-We want to avoid accidental halts of the machine processing input.
+	"Error" conditions:
+	- 101 > 111
+	- 101 < 111
+(Empty String should be accepted by the Turing Machine.)
+	
+=> Transition the machine to a designated error state
+	non-error:
+	(i)		'' empty string	-> accepted
+	(ii) 	101 = 111 		-> accepted
+	
+
+=========== CODE ==========
+
+0 _ _ R HALT  ;empty string on the tape
+0 0 X R 1     ;Erases Leftmost zero and moves right
+0 1 1 R ERROR ;Enter the Error state if first input is 1
+
+1 0 0 R 1 ;Skip 0 
+1 1 1 R 1 ;Skip 1
+1 _ _ L 2 ;Found a blank
+
+2 1 X L 3     ;Erase 1 begin moving left
+2 X X L Error ;|0| > |1| Thus Error
+
+3 1 1 L 3 ; Moving back over the 1s
+3 0 0 L 4 ;
+3 X X R 7 ; No more 0s
+
+4 0 0 L 4 ; Move Over 0
+4 X X R 5 ; Erase the of the string and starts again
+
+5 0 X R 6
+
+6 0 0 R 6
+6 1 1 R 6 ;Go right until we find X
+6 X X L 2
+
+7 X X R ACCEPT  ;|0| = |1|
+7 1 1 R Error ;|0| < |1|

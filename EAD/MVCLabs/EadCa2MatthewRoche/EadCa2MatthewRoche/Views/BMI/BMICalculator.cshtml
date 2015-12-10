@@ -1,0 +1,58 @@
+﻿@*Matthew Roche X00102929*@
+
+@model EadCa2MatthewRoche.Models.BMI
+
+@{
+    ViewBag.Title = "BMICalculator";
+}
+
+
+<h2>BMI Calculator</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Enter your details</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stones)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stones)
+            @Html.ValidationMessageFor(model => model.stones)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lbs)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lbs)
+            @Html.ValidationMessageFor(model => model.lbs)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.feet)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.feet)
+            @Html.ValidationMessageFor(model => model.feet)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.inches)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.inches)
+            @Html.ValidationMessageFor(model => model.inches)
+        </div>
+
+
+
+        <p>
+            <input type="submit" value="Send" />
+        </p>
+    </fieldset>
+}
+
+

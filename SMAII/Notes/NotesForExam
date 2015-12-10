@@ -1,0 +1,47 @@
+SMAII revision session.
+
+Exam walkthrough 2014:
+	->	Q1a.	About Semantic Web technologies, give definitions and explain
+				how they are related to one another. (Use Layer Cake to demonstrate this)
+				-	Give an example such as an RDF example ie. "Student is taking exam"
+		
+		Q1b.	Give an opinion, can use bullet points, expected to know basics of Web 2.0,
+				demonstrate similarities and give reasons.
+				
+	->	Schema Matching won't be on the exam, disregard Q2 2014
+
+	->	Q4.		We spent a lot more time on Social Media Analysis, so it's likely we'll have
+				at least two questions on the topic. 
+		
+		Q4a.	Give a real world example, can use SMA to spot weaknesses, who is influential,
+				opinion examples.
+		
+		Q4b.	We looked at Metrics quite a lot and used them as a basis for anaylsis. We studied
+				8 metrics, 4 for node (foucesed on centrality)
+		
+		Q4ci.	Know how to calculate metrics
+		
+		Q4cii.	Highlight betweeness centrality and closeness centrality, Node D is not in a pivotal position.
+		
+Exam Walkthrough 2013:
+	->	Q1.		Can be ignored.
+		
+	->	Q2b.	Description element, about tag, resource, propery and value pairs. Not looking for exact syntax
+				just general structure.
+				
+	->	Q3a.	Can be ignored.
+		
+		Q3b.	Should be able to answer this. New information, automatic classification, make sure it's consistant.
+		
+	->	Q4a.	Can be ignored.
+		
+		Q4b.	Can be ignored.
+		
+		Q4c.	Similar to 2014 Q1b, 14 marks so 15 minutes each short essay can be written in bullet points. 3-4 arguments each essay.
+				Standardisation W3C Web 2.0 can be developed ad-hoc, Semantic Web not as well known though it is widely used.
+				
+General Notes: 
+	->	There was no question on Visualisation, Propagation, Structure and Content, Tie Strength (Topics: 2, 3, 4, 5).
+		Each too small for full question, could be half a question each.
+		
+	->	Could be a question on Sparkle queries, don't need to know exact syntax but we should know how to formulate overall structure.
