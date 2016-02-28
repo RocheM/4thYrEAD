@@ -1,0 +1,75 @@
+﻿@*Matthew Roche EAD CA3 
+http://matthewrocheeadca3.azurewebsites.net/*@
+
+@model MatthewRocheEadCA3.Models.Lotto
+
+@{
+    ViewBag.Title = "Lotto";
+}
+
+
+
+<h2>Lotto</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Enter your details</legend>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numbersToDraw)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numbersToDraw)
+            @Html.ValidationMessageFor(model => model.numbersToDraw)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.maxNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.maxNumber)
+            @Html.ValidationMessageFor(model => model.maxNumber)
+        </div>
+
+
+        <p>
+            <input type="submit" value="Generate Numbers" />
+        </p>
+    </fieldset>
+}
+
+
+@if (IsPost)
+{
+    <div>
+
+        @if (!string.IsNullOrEmpty(Model.Error))
+        {
+
+            @Html.LabelFor(model => model.numbers)
+            <ul>
+                @foreach (var number in Model.numbers)
+                {
+                    // Display the errors that require attention
+                    <li>
+                        @number
+                    </li>
+                }
+            </ul>
+
+        }
+        else
+        {
+            @Html.ValidationMessageFor(model => model.numbersToDraw)
+        }
+
+
+    </div>
+}
+
+
+
+

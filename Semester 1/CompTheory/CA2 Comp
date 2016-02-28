@@ -1,0 +1,136 @@
+Comp Theory - CA Details
+
+Due Date: 18th December 5PM
+- Must Work in the Morphit emulator.
+
+Notes:
+	Q1,2,3: You use Integer inputs on the tape using the n+1 encoding
+			scheme
+			(if n = 5 is encoded as '111111' 6 ones)
+
+4 Turing Machine Questions:
+	Design a Turing Machine to compute the following:
+
+	Q1: If given f(x) = {x : x < 3		}
+						{x + 3 : x >= 3	}
+		0,1,2 => 0,1,2
+		3 => 6
+		4 => 7
+		5 => 8
+		
+		-> Transition between states to handle counting
+		
+		========== CODE ===========
+		
+		0 1 1 R 1
+
+		1 1 1 R 2
+
+		2 1 1 R 3
+
+		3 1 1 R 4
+
+		4 1 1 R 5 
+
+
+		5 1 1 R 5
+		5 _ 1 R 6
+
+		6 _ 1 R 7
+
+		7 _ 1 R ACCEPT
+	
+		========== CODE ===========
+			
+		
+		Q2: Take 3 numbers and add them together =	f(x,y,z) = x+y+z
+													f(1,2,3) = 6
+													
+												
+		========== CODE ===========
+		
+		0 1 _ R 1
+		0 _ _ R HALT
+
+		1 1 _ R 2
+		1 _ _ R 2
+
+		2 1 _ R 3
+		2 _ _ R 3
+
+		3 1 _ R 4
+		3 _ _ R 4
+
+		4 1 1 R 4
+		4 _ 1 R 5
+
+		5 _ _ R ACCEPT
+		5 1 1 R ACCEPT
+
+		ACCEPT _ _ R HALT
+		ACCEPT 1 1 R HALT
+	
+		========== CODE ===========
+	
+	Q3: Take a number and multiply by 3 = f(x) = x*3
+	
+	
+		========== CODE ===========
+		
+		0 1 W R 1
+		0 _ _ R CleanUp
+
+		1 1 1 R 1
+		1 _ _ R 2
+
+		2 _ 1 R 3
+		2 1 1 R 2
+
+		3 _ 1 R 4
+
+		4 _ _ L 4
+		4 1 1 L 4
+		4 W W R 0
+
+		CleanUp 1 1 L CleanUp
+		CleanUp _ 1 L CleanUp
+		CleanUp W 1 L PlaceHolderClean
+
+		PlaceHolderClean W 1 L PlaceHolderClean
+		PlaceHolderClean _ _ L SUB1
+
+		SUB1 _ _ R SUB1
+		SUB1 1 _ R SUB2
+
+		SUB2 1 _ R SUB3
+
+		SUB3 1 _ R HALT
+			
+			
+		========== CODE ===========
+	
+	Q4: Given 7 bits encode even parity
+		
+		
+
+		========== CODE ===========
+		
+		0 1 1 R 1  ;Even parity state reading 0, change state
+		0 0 0 R 0  ;Even parity state reading 1, don’t change state
+		1 1 1 R 0 ;Odd parity state reading 0, change state
+		1 0 0 R 1 ;Odd parity state reading 0, don’t change state
+
+		0 _ 1 R HALT ;End of string in even parity state, write 1 and go to state 3
+		1 _ 0 R HALT  ;End of string in odd parity state, write 0 and go to state 3
+
+		
+		========== CODE ===========
+		
+		0 1 1 R 1
+		1 1 1 R 0 
+
+
+		0 _ _ R HALT ;End of string in even parity state, write 1 and go to state 3
+		1 _ 1 R HALT  ;End of string in odd parity state, write 0 and go to state 3
+
+		========== CODE ===========

@@ -1,0 +1,133 @@
+﻿CA2 Matthew Roche - X00102929
+
+
+
+Q1: If given f(x) = {x : x < 3		}
+					{x + 3 : x >= 3	}
+	0,1,2 => 0,1,2
+	3 => 6
+	4 => 7
+	5 => 8
+	
+	-> Transition between states to handle counting
+	
+	========== CODE ===========
+	
+	;Counts to three, adds two ones to the end if > 3
+
+	0 1 1 R 1		;If you get a one move to state one
+	0 _ _ R HALT	;If you get a blank < 3 halt
+
+	1 1 1 R 2		;If you get a one move to state two
+	1 _ _ R HALT	;If you get a blank < 3 halt
+	
+	2 1 1 R 3		;If you get a one move to state three
+	2 _ _ R HALT	;If you get a blank < 3 halt
+	
+	3 1 1 R 4		;If you get a one move to state five
+	3 _ _ R HALT	;If you get a blank < 3 halt
+	
+	4 1 1 R 5 		;If you get a one move to state five
+	4 _ _ R HALT	;If you get a blank < 3 halt
+
+	5 1 1 R 5		;Move to the end of the number
+	5 _ 1 R 6		;Add a one transition to state six
+
+	6 _ 1 R 7		;Add a one transition to state seven
+
+	7 _ 1 R ACCEPT	;Add a one transition to Accepting State
+
+	ACCEPT _ _ R HALT	;Accpept the calculation, halt
+	
+	========== CODE ===========
+		
+	
+Q2: Take 3 numbers and add them together =	f(x,y,z) = x+y+z
+											f(1,2,3) = 6
+												
+											
+	========== CODE ===========
+	
+	;To Add Three numbers, we're concatenating them and removing two 1s 
+
+	0 1 1 R 0		;Move to the end of the number
+	0 _ 1 R 1		;When you get a blank change it to a 1
+
+	1 1 1 R 1		;Move to the end of the second number
+	1 _ 1 R 2		;When you get a blank change it to a 1
+
+	2 1 1 R 2		;Move to the end of the third number
+	2 _ _ L 3		;When you get a blank change it to a 1 move left
+
+	3 1 _ L 4		;Remove a one from the end which represents a 0 or a 1 we added in place of a blank
+	3 _ _ L HALT	;If you get a blank something went wrong halt
+
+	4 1 _ L 5		;Remove a one from the end which represents a 0 or a 1 we added in place of a blank
+	4 _ _ L HALT	;If you get a blank something went wrong halt
+
+	5 1 _ L 6		;Remove a one from the end which represents a 0 or a 1 we added in place of a blank
+	5 _ _ L HALT	;If you get a blank something went wrong halt
+
+	6 1 _ L HALT	;Remove a one from the end which represents a 0 or a 1 we added in place of a blank, the calculation is complete so halt.
+	6 _ _ L HALT	;If you get a blank something went wrong halt
+	
+	========== CODE ===========
+
+Q3: Take a number and multiply by 3 = f(x) = x*3
+
+
+	========== CODE ===========
+	
+	;Adding two 1's for every 1 in the string to be multiplied, removing extra 1's and placeholders at the end
+	
+	0 1 W R 1								;Mark first character with placeholder value 'W'
+	0 _ _ R CleanUp							;If we reach the end of the string go to cleanup state
+
+	1 1 1 R 1								;Go to the end of the number to be multiplied
+	1 _ _ R 2								;If we reach the end of the number go to state 2
+
+	2 _ 1 R 3								;When we reach a blank replace it with a 1
+	2 1 1 R 2								;If we have a 1 leave it and go to the end of the number
+
+	3 _ 1 R 4								;Place a second 1 in place of a blank
+
+	4 _ _ L 4								;Reset to the start of the tape
+	4 1 1 L 4								;Reset to the start of the tape
+	4 W W R 0								;When we reach a placeholder value, we can restart the process
+
+	CleanUp 1 1 L CleanUp					;Reset to the start of the tape
+	CleanUp _ 1 L CleanUp					;Concatonate the two sets of 1
+	CleanUp W 1 L PlaceHolderClean			;We have reached the start of the placeholder, we can start to replace them
+
+	PlaceHolderClean W 1 L PlaceHolderClean ;Replace all instances of 'W'
+	PlaceHolderClean _ _ L SUB1				;When we reach the end of the placeholder values
+
+	SUB1 _ _ R SUB1							;If we're at a blank go to the right
+	SUB1 1 _ R SUB2							;Remove a 1, it is the extra 1 to represent 0 in n+1 notation
+
+	SUB2 1 _ R SUB3							;Remove a 1, it is the extra 1 to represent 0 in n+1 notation
+
+	SUB3 1 _ R HALT							;Remove a 1, it is the extra 1 to represent 0 in n+1 notation
+		
+		
+	========== CODE ===========
+	
+Q4: Given 7 bits encode even parity
+
+	========== CODE ===========
+	;This machine takes a string of binary and reads through from left to right, it switches parity state each time it encounters 1
+
+
+	;Even
+	0 1 1 R 1		;Encountered a 1 Switch to Odd Parity
+	0 0 0 R 0		;Encountered a 0 Stay in Even Parity
+
+
+	;Odd
+	1 1 1 R 0		;Encountered a 1 Switch to Even Parity
+	1 0 0 R 1		;Encountered a 0 Stay in Odd Parity
+
+
+	;Result
+	0 _ 0 R HALT	;Machine has ended in Even Parity Write a 0 and HALT
+	1 _ 1 R HALT	;Machine has ended in Odd Parity Write a 1 and HALT 

@@ -1,0 +1,45 @@
+﻿@model LPT.Models.LocalPropertyTax
+
+@{
+    ViewBag.Title = "LPT Calculator";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PropertyValue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PropertyValue)
+            @Html.ValidationMessageFor(model => model.PropertyValue)
+        </div>
+       
+        @if(Model != null)
+        {
+            <div class="display-field">
+                @Html.DisplayNameFor(model => model.PropertyValueBand)
+                @Html.DisplayFor(model => model.PropertyValueBand)
+            </div>
+            <div class="display-field">
+                @Html.DisplayNameFor(model => model.PropertyTax)
+                @Html.DisplayFor(model => model.PropertyTax)
+            </div>
+        }
+        <p>
+            <input type="submit" value="Calculate" />
+        </p>
+    </fieldset>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

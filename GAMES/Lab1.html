@@ -1,0 +1,46 @@
+<body>
+  <canvas id="myCanvas" width="600" height="600"></canvas>
+  <script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    // do stuff here
+
+	var x = canvas.width/2;
+	var y = canvas.height/2;
+
+	var lenX = canvas.width;
+	var lenY = canvas.height;
+
+	
+	//X
+	context.beginPath();
+	context.moveTo(x, 0);
+    context.lineTo(x, lenX);
+    context.stroke();
+
+	
+	//Y
+	context.beginPath();
+	context.moveTo(0, y);
+    context.lineTo(lenY, y);
+    context.stroke();
+	
+	//
+	DrawMyLine(0, -50, 50, 150 )
+
+	
+	function DrawMyLine(x1, y1, x2, y2) {
+	  
+	  
+	  var originX = 300;
+	  var originY = 300;
+	  
+	 context.beginPath();
+	 context.moveTo(originX + 10*(x1), originY + 10*(y1 * -1));
+	 context.lineTo(originX + 10*(x2), originY + 10*(y2* -1));
+	 context.stroke();
+  
+}
+	
+  </script>
+</body>
